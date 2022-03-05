@@ -59,7 +59,7 @@ const AddProjectScreen = ({ projects, setProjects }) => {
             projectManager: '',
             assignedTo: '',
             status: '',
-            id: Math.floor(Math.random() * 10000),
+            id: projects.length + 1,
           }}
         >
           {({ errors, isValid, touched }) => (

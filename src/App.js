@@ -8,7 +8,7 @@ import HomeScreen from './components/screens/HomeScreen';
 function App() {
   const [projects, setProjects] = useState([
     {
-      id: 10000,
+      id: 1,
       projectName: 'Pokedex',
       description: 'Gen 1-3 Pokedex',
       projectManager: 'Marie',
@@ -17,7 +17,7 @@ function App() {
       date: new Date(),
     },
     {
-      id: 10001,
+      id: 2,
       projectName: 'E-Commerce',
       description: 'Meli clone',
       projectManager: 'John',

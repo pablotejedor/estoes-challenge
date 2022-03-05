@@ -6,16 +6,15 @@ import { BsArrowLeft } from 'react-icons/bs';
 
 const EditProjectScreen = ({ projects, setProjects }) => {
   const navigate = useNavigate();
-  const params = useParams();
-  const selectedProject = projects.filter(
-    project => project.id == params.id
-  )[0];
+  const { id } = useParams();
+  const selectedProject = projects.find(project => project.id == id);
+
   const submitHandler = values => {
     values.date = new Date();
-    setProjects(projects => [
-      ...projects.filter(project => project.id != params.id),
-      values,
-    ]);
+    const projectsEdited = [...projects];
+    const index = projects.indexOf(selectedProject);
+    projectsEdited[index] = values;
+    setProjects(projectsEdited);
     navigate('/');
   };
 
@@ -65,7 +64,7 @@ const EditProjectScreen = ({ projects, setProjects }) => {
           projectManager: selectedProject.projectManager,
           assignedTo: selectedProject.assignedTo,
           status: selectedProject.status,
-          id: params.id,
+          id: id,
         }}
       >
         {({ errors, isValid, touched }) => (
