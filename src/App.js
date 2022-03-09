@@ -1,7 +1,6 @@
-import { Container, Stack, Image, Divider } from '@chakra-ui/react';
+import { Container, Stack, Divider } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Logo from './assets/logo.png';
 import AddProjectScreen from './components/screens/AddProjectScreen';
 import EditProjectScreen from './components/screens/EditProjectScreen';
 import HomeScreen from './components/screens/HomeScreen';
@@ -35,7 +34,6 @@ function App() {
           {/* header with logo */}
           <Stack alignItems={'center'} w="100%" px={[1, 12]}>
             <Stack align={'flex-start'} w="100%">
-              <Image src={Logo} alt="logo" />
               <Divider />
             </Stack>
           </Stack>
